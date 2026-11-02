@@ -200,10 +200,11 @@ def run_ui() -> None:
             render_sources_and_meta(m.get("sources", []), m.get("latency"))
 
     if index_is_empty(cfg):
-        st.info(
-            "No documents indexed yet. Just run `python app.py` — "
-            "it loads the env file and the docs, then starts this UI."
-        )
+        with st.spinner("Initializing knowledge base from CSV documents (one-time setup)..."):
+            model = get_model(cfg.embedding_model)
+            ensure_index(cfg, model=model)
+            st.rerun()
+
 
     # ------------------ Starter Chips for Recruiters ------------------
     if len(st.session_state.messages) == 0:

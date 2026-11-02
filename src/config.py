@@ -28,6 +28,11 @@ class RAGConfig:
     # For non-BGE models this defaults to empty.
     query_instruction: str | None = os.getenv("QUERY_INSTRUCTION")
 
+    # LLM (Groq - free tier)
+    groq_api_key: str = ""
+    groq_model: str = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+    temperature: float = float(os.getenv("TEMPERATURE", "0.2"))
+
     def __post_init__(self):
         if self.query_instruction is None:
             if "bge" in self.embedding_model.lower():
@@ -37,18 +42,13 @@ class RAGConfig:
             else:
                 self.query_instruction = ""
 
-    # Qdrant runs in local file mode - no server needed
-    qdrant_path: str = os.getenv("QDRANT_PATH", "./qdrant_data")
-    collection_name: str = os.getenv("COLLECTION_NAME", "doc_qa")
-
-    # Chunking
-    chunk_size: int = int(os.getenv("CHUNK_SIZE", "500"))
-    chunk_overlap: int = int(os.getenv("CHUNK_OVERLAP", "100"))
-
-    # Retrieval
-    top_k: int = int(os.getenv("TOP_K", "4"))
-
-    # LLM (Groq - free tier)
-    groq_api_key: str = os.getenv("GROQ_API_KEY", "")
-    groq_model: str = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
-    temperature: float = float(os.getenv("TEMPERATURE", "0.2"))
+        # Check environment variable first, then Streamlit Cloud secrets
+        if not self.groq_api_key:
+            self.groq_api_key = os.getenv("GROQ_API_KEY", "")
+        if not self.groq_api_key:
+            try:
+                import streamlit as st
+                if hasattr(st, "secrets") and "GROQ_API_KEY" in st.secrets:
+                    self.groq_api_key = str(st.secrets["GROQ_API_KEY"])
+            except Exception:
+                pass
