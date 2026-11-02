@@ -160,6 +160,12 @@ def run_ui() -> None:
     st.caption("Ask questions grounded strictly in your CSV documents with source citations.")
 
     cfg = resolve_paths(RAGConfig())
+    if not cfg.groq_api_key:
+        try:
+            if hasattr(st, "secrets") and "GROQ_API_KEY" in st.secrets:
+                cfg.groq_api_key = str(st.secrets["GROQ_API_KEY"])
+        except Exception:
+            pass
 
     # ------------------ Sidebar: Controls & Dynamic Upload ------------------
     with st.sidebar:
