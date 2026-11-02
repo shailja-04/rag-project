@@ -194,7 +194,19 @@ def run_ui() -> None:
         st.markdown("### 📊 Active Knowledge Base")
         csv_files = sorted(Path(DOCS_DIR).glob("*.csv"))
         for f in csv_files:
-            st.markdown(f"• `{f.name}`")
+            col_name, col_del = st.columns([0.8, 0.2])
+            with col_name:
+                st.markdown(f"• `{f.name}`")
+            with col_del:
+                if st.button("❌", key=f"del_{f.name}", help=f"Delete {f.name}"):
+                    try:
+                        f.unlink()
+                        model = get_model(cfg.embedding_model)
+                        ensure_index(cfg, model=model)
+                        st.success(f"Removed {f.name}!")
+                        st.rerun()
+                    except Exception as e:
+                        st.error(f"Error removing: {e}")
 
     # ------------------ Message History ------------------
     if "messages" not in st.session_state:
