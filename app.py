@@ -192,21 +192,28 @@ def run_ui() -> None:
 
         st.markdown("---")
         st.markdown("### 📊 Active Knowledge Base")
+        DEFAULT_FILES = {"genai_concepts.csv", "python_basics.csv"}
         csv_files = sorted(Path(DOCS_DIR).glob("*.csv"))
         for f in csv_files:
-            col_name, col_del = st.columns([0.8, 0.2])
-            with col_name:
-                st.markdown(f"• `{f.name}`")
-            with col_del:
-                if st.button("❌", key=f"del_{f.name}", help=f"Delete {f.name}"):
-                    try:
-                        f.unlink()
-                        model = get_model(cfg.embedding_model)
-                        ensure_index(cfg, model=model)
-                        st.success(f"Removed {f.name}!")
-                        st.rerun()
-                    except Exception as e:
-                        st.error(f"Error removing: {e}")
+            if f.name in DEFAULT_FILES:
+                # Default system files are protected
+                st.markdown(f"• `{f.name}` *(default)*")
+            else:
+                # User-uploaded files can be deleted
+                col_name, col_del = st.columns([0.8, 0.2])
+                with col_name:
+                    st.markdown(f"• `{f.name}`")
+                with col_del:
+                    if st.button("❌", key=f"del_{f.name}", help=f"Delete {f.name}"):
+                        try:
+                            f.unlink()
+                            model = get_model(cfg.embedding_model)
+                            ensure_index(cfg, model=model)
+                            st.success(f"Removed {f.name}!")
+                            st.rerun()
+                        except Exception as e:
+                            st.error(f"Error removing: {e}")
+
 
     # ------------------ Message History ------------------
     if "messages" not in st.session_state:
