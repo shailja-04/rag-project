@@ -1,0 +1,11 @@
+# Dark chatbot theme (applied automatically by `streamlit run`).
+[theme]
+base = "dark"
+backgroundColor = "#0f1116"
+secondaryBackgroundColor = "#1c1f26"
+textColor = "#f2f2f2"
+primaryColor = "#f2c14e"
+font = "sans serif"
+
+[server]
+fileWatcherType = "none"

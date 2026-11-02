@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Data & models (regenerate / download, never commit)
+qdrant_data/
+qdrant_data.manifest.json
+/models/
+/data/uploads/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+.pytest_cache/

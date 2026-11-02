@@ -1,0 +1,40 @@
+term,category,definition
+Variable,Python Basics,"A name that refers to a value stored in memory. Assign with =, e.g. x = 10."
+Data Type,Python Basics,"The kind of a value: int, float, str, bool, or NoneType. Check it with type()."
+Integer,Python Basics,"A whole number without a decimal point, e.g. 42. Type name: int."
+Float,Python Basics,"A number with a decimal point, e.g. 3.14. Type name: float."
+String,Python Basics,A sequence of characters in quotes. Indexed from 0; immutable; format with f-strings.
+Boolean,Python Basics,"A value that is either True or False, used in conditions."
+None,Python Basics,A special value meaning 'no value'. Functions without return give back None.
+List,Python Basics,"An ordered, mutable collection in square brackets. Items can be appended, removed or changed."
+Tuple,Python Basics,"An ordered, immutable collection in parentheses. Once created, its items cannot change."
+Dictionary,Python Basics,An unordered collection of key-value pairs in curly braces. Look values up by their key.
+Set,Python Basics,An unordered collection of unique items in curly braces. Duplicates are removed automatically.
+Function,Python Basics,A reusable block defined with def. It takes parameters and returns a result with return.
+Parameter,Python Basics,A name listed in a function definition that receives a value when the function is called.
+Argument,Python Basics,A value passed to a function when calling it.
+Return Value,Python Basics,"The result a function sends back with return. Without return, the result is None."
+Lambda,Python Basics,A small anonymous one-line function written with the lambda keyword.
+Scope,Python Basics,"Where a variable is visible: local inside a function, global outside it."
+Class,Python Basics,"A blueprint for creating objects, defined with the class keyword."
+Object,Python Basics,"An instance created from a class, holding its own data and methods."
+Inheritance,Python Basics,"A child class reusing a parent class's attributes and methods, optionally overriding them."
+__init__,Python Basics,The constructor method of a class. It initializes a new object and runs automatically on creation.
+self,Python Basics,The first parameter of a method. It refers to the object the method was called on.
+Module,Python Basics,"A single Python file reused with import, e.g. import math."
+Package,Python Basics,"A folder of modules, imported as one unit."
+pip,Python Basics,Python's package installer. pip install requests installs a package from PyPI.
+Virtual Environment,Python Basics,"An isolated folder for a project's packages, created with python -m venv .venv."
+Exception,Python Basics,"A runtime error object, e.g. ValueError or FileNotFoundError."
+Try-Except,Python Basics,try holds code that might fail; except runs when a specific exception occurs; finally always runs.
+List Comprehension,Python Basics,A one-line expression that builds a list from a loop and an optional condition.
+Generator,Python Basics,"A function using yield that produces values lazily, one at a time, without storing them all."
+f-string,Python Basics,"A string prefixed with f that embeds values in curly braces, e.g. f'Hi, {name}'."
+Indentation,Python Basics,"Leading spaces that define code blocks in Python, usually 4 spaces. Wrong indentation is an error."
+PEP 8,Python Basics,"Python's official style guide: 4-space indentation, snake_case names, readable spacing."
+Docstring,Python Basics,"A triple-quoted string at the top of a module, class or function that documents it."
+Type Hint,Python Basics,An optional annotation like def f(x: int) -> int that documents expected types.
+File Handling,Python Basics,"Reading and writing files with open(), ideally inside a with block so the file closes automatically."
+with Statement,Python Basics,"A block that sets up and cleans up a resource automatically, e.g. closing a file."
+Enumerate,Python Basics,"A built-in that loops with both index and value: for i, v in enumerate(items)."
+Range,Python Basics,"A built-in producing a sequence of numbers, e.g. range(3) gives 0, 1, 2."

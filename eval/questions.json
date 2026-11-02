@@ -1,0 +1,244 @@
+[
+ {
+  "expected_keywords": [
+   "table",
+   "collection"
+  ],
+  "question": "What is a collection in Qdrant?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "payload",
+   "vector"
+  ],
+  "question": "What does a point contain in Qdrant?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "cosine",
+   "angle"
+  ],
+  "question": "Which distance metric is most common for text embeddings and why?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "HNSW",
+   "logarithmic"
+  ],
+  "question": "How does Qdrant keep vector search fast at scale?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "token",
+   "context window"
+  ],
+  "question": "What is a token and how is context window measured?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "attention",
+   "animal"
+  ],
+  "question": "How does the attention mechanism work?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "RLHF",
+   "instruction"
+  ],
+  "question": "What is the difference between pretraining and fine-tuning?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "hallucinate",
+   "plausible"
+  ],
+  "question": "Why do language models hallucinate?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "384",
+   "MiniLM"
+  ],
+  "question": "What embedding model does this project use and what vector size does it produce?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "same model",
+   "vector spaces"
+  ],
+  "question": "Why must the query and documents use the same embedding model?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "ingest",
+   "retrieve",
+   "augment",
+   "generate"
+  ],
+  "question": "What are the four stages of a RAG pipeline?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "overlap",
+   "300"
+  ],
+  "question": "How should I chunk documents for RAG?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "retrieval miss",
+   "top-k"
+  ],
+  "question": "What should I do when the right chunk exists but isn't retrieved?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "citations",
+   "private"
+  ],
+  "question": "When should I use RAG instead of fine-tuning?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "ReAct",
+   "observation"
+  ],
+  "question": "What is the ReAct loop in AI agents?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "JSON schema",
+   "tool call"
+  ],
+  "question": "How does tool calling work?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "MCP",
+   "LangGraph"
+  ],
+  "question": "Which frameworks or protocols are used to build agents?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "hit-rate",
+   "top-k"
+  ],
+  "question": "What is hit-rate@k and why measure it?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "faithfulness",
+   "supported"
+  ],
+  "question": "What does faithfulness measure in generation evals?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "unanswerable",
+   "don't know"
+  ],
+  "question": "What kinds of questions belong in a good eval set?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "0.2",
+   "temperature"
+  ],
+  "question": "What temperature should I use for factual question answering?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "expected_keywords": [
+   "examples",
+   "citations"
+  ],
+  "question": "What is few-shot prompting used for?",
+  "source_doc": "genai_concepts_guide.pdf"
+ },
+ {
+  "question": "What is the difference between a list and a tuple in Python?",
+  "expected_keywords": [
+   "mutable",
+   "immutable"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ },
+ {
+  "question": "How do you define a function in Python?",
+  "expected_keywords": [
+   "def",
+   "return"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ },
+ {
+  "question": "What is a dictionary in Python?",
+  "expected_keywords": [
+   "key",
+   "value"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ },
+ {
+  "question": "What does __init__ do in a Python class?",
+  "expected_keywords": [
+   "constructor",
+   "initializes"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ },
+ {
+  "question": "How do you handle errors in Python?",
+  "expected_keywords": [
+   "try",
+   "except"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ },
+ {
+  "question": "What is a list comprehension?",
+  "expected_keywords": [
+   "one line",
+   "comprehension"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ },
+ {
+  "question": "How do you read a file in Python?",
+  "expected_keywords": [
+   "open",
+   "with"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ },
+ {
+  "question": "What is the difference between == and is in Python?",
+  "expected_keywords": [
+   "equality",
+   "identity"
+  ],
+  "source_doc": "python_basics_guide.pdf"
+ }
+]
