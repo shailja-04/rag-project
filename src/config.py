@@ -28,6 +28,17 @@ class RAGConfig:
     # For non-BGE models this defaults to empty.
     query_instruction: str | None = os.getenv("QUERY_INSTRUCTION")
 
+    # Qdrant runs in local file mode - no server needed
+    qdrant_path: str = os.getenv("QDRANT_PATH", "./qdrant_data")
+    collection_name: str = os.getenv("COLLECTION_NAME", "doc_qa")
+
+    # Chunking
+    chunk_size: int = int(os.getenv("CHUNK_SIZE", "500"))
+    chunk_overlap: int = int(os.getenv("CHUNK_OVERLAP", "100"))
+
+    # Retrieval
+    top_k: int = int(os.getenv("TOP_K", "4"))
+
     # LLM (Groq - free tier)
     groq_api_key: str = ""
     groq_model: str = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
